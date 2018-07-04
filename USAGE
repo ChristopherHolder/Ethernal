@@ -1,0 +1,129 @@
+
+ ________  ________  __    __                                          __           
+|        \|        \|  \  |  \                                        |  \          
+| $$$$$$$$ \$$$$$$$$| $$  | $$  ______    ______   _______    ______  | $$          
+| $$__       | $$   | $$__| $$ /      \  /      \ |       \  |      \ | $$          
+| $$  \      | $$   | $$    $$|  $$$$$$\|  $$$$$$\| $$$$$$$\  \$$$$$$\| $$          
+| $$$$$      | $$   | $$$$$$$$| $$    $$| $$   \$$| $$  | $$ /      $$| $$          
+| $$_____    | $$   | $$  | $$| $$$$$$$$| $$      | $$  | $$|  $$$$$$$| $$          
+| $$     \   | $$   | $$  | $$ \$$     \| $$      | $$  | $$ \$$    $$| $$          
+ \$$$$$$$$    \$$    \$$   \$$  \$$$$$$$ \$$       \$$   \$$  \$$$$$$$ \$$          
+                                                                                    
+                                                                                    
+                                                                                    
+ __    __   ______    ______    ______   ________        ________  __  __           
+|  \  |  \ /      \  /      \  /      \ |        \      |        \|  \|  \          
+| $$  | $$|  $$$$$$\|  $$$$$$\|  $$$$$$\| $$$$$$$$      | $$$$$$$$ \$$| $$  ______  
+| $$  | $$| $$___\$$| $$__| $$| $$ __\$$| $$__          | $$__    |  \| $$ /      \ 
+| $$  | $$ \$$    \ | $$    $$| $$|    \| $$  \         | $$  \   | $$| $$|  $$$$$$\
+| $$  | $$ _\$$$$$$\| $$$$$$$$| $$ \$$$$| $$$$$         | $$$$$   | $$| $$| $$    $$
+| $$__/ $$|  \__| $$| $$  | $$| $$__| $$| $$_____       | $$      | $$| $$| $$$$$$$$
+ \$$    $$ \$$    $$| $$  | $$ \$$    $$| $$     \      | $$      | $$| $$ \$$     
+  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$  \$$$$$$$$       \$$       \$$ \$$  \$$$$$$$
+                                                                                    
+ETHERNAL IS AN DECENTRALIZED P2P LOTTERY PLATFORM. IT ALLOWS USERS TO CREATE AND JOIN LOTTERIES IN WHICH ALL OF THE POT WILL BE 
+AWARDED TO A RANDOM PARTICIPANT.
+ 
+-----------------------------------------------------------------------------------------
+
+
+ ______  __    __  ________   ______  
+|      \|  \  |  \|        \ /      \ 
+ \$$$$$$| $$\ | $$| $$$$$$$$|  $$$$$$\
+  | $$  | $$$\| $$| $$__    | $$  | $$
+  | $$  | $$$$\ $$| $$  \   | $$  | $$
+  | $$  | $$\$$ $$| $$$$$   | $$  | $$
+ _| $$_ | $$ \$$$$| $$      | $$__/ $$
+|   $$ \| $$  \$$$| $$       \$$    $$
+ \$$$$$$ \$$   \$$ \$$        \$$$$$$ 
+                                      
+                                                                                                     
+Behind the scenes a lot of work was needed in order to make this app work. From WEB3J to WEB3PY, and from Geth to Parity.
+For its creation we needed a combination of various libraries that dealt with asynchronous intercommunication with the blockchain.
+We even needed to re-write the whole backend architecture from JAVA to Python a couple of weeks ago. We needed to do this
+because the time it took us to debug something was getting exponentially higher as we were starting to add features. 
+
+The latest stack of technologies implemented behind this application are as follow:
+
+             ------------
+SERVER ----->|  GETH    |  - Client who transform a server into an Ethereum node. Making it able to access interact with transactions in the Ethereum network.
+             ------------
+	     | WEB3PY   | - Framework on top of GETH which allows us to reference wallets and smart contract with python code and generate python wrappers for 
+	     ------------  smart contracts.
+	     | FLASK    |  - Web framework that allows to send JSONs for the interaction between the client and the server(Huge oversimplification)
+	     ------------    as we do plenty of asynchronous tasks which require muli-threading.
+             |SQL ALCHEMY| - Allows us to do agnostic queries with sql.
+             -------------
+            --------------
+CLIENT------|   ANDROID  | - Framework to create an Android application. 
+            --------------
+	    |   VOLLEY   | - HTTP requests wrapper for android, which allows us to send the requests as JSONs.
+            --------------
+
+----------------------------------------------------------------------------------------------------------                                 
+ ______  __    __   ______  ________   ______   __        __       
+|      \|  \  |  \ /      \|        \ /      \ |  \      |  \      
+ \$$$$$$| $$\ | $$|  $$$$$$\\$$$$$$$$|  $$$$$$\| $$      | $$      
+  | $$  | $$$\| $$| $$___\$$  | $$   | $$__| $$| $$      | $$      
+  | $$  | $$$$\ $$ \$$    \   | $$   | $$    $$| $$      | $$      
+  | $$  | $$\$$ $$ _\$$$$$$\  | $$   | $$$$$$$$| $$      | $$      
+ _| $$_ | $$ \$$$$|  \__| $$  | $$   | $$  | $$| $$_____ | $$_____ 
+|   $$ \| $$  \$$$ \$$    $$  | $$   | $$  | $$| $$     \| $$     \
+\$$$$$$ \$$   \$$  \$$$$$$    \$$    \$$   \$$ \$$$$$$$$ \$$$$$$$$
+
+It should be fairly simple to install the application on an android device. Inside the Brogrammer_Studio file there 
+should be an 'app-debug.apk' which can be opened with an android device and installed. You could literally pass it like a normal file 
+and open it. You will most likely need to activate an option so that it let's you install an .apk from an outside source.(easiest way)
+
+If you do not have an android device you can import(open) it with Android Studio the project is inside the Ethernal4 directory which is inside the Brogrammers_Studio directory. 
+
+If you do not have Android Studio you can download it from here https://developer.android.com/studio/index.html.
+There you will find information on how to install it.
+
+As for opening the aplication Android Studio provides a default emulator that you can set up to run the application.(This implies creating a device with the android manager of Android Studio in some cases.More information on that https://developer.android.com/studio/run/managing-avds.html )
+This can be done with the Android Studio GUI or you can do it with the cli if you have already install ADB and use the commands described in the README.md 
+
+-------------------------------------------------------------------------------------------------------------
+  _______  __    __  ________   ______   _______   ______   ______   __       
+|        \|  \  |  \|        \ /      \ |       \ |      \ /      \ |  \      
+ \$$$$$$$$| $$  | $$ \$$$$$$$$|  $$$$$$\| $$$$$$$\ \$$$$$$|  $$$$$$\| $$      
+   | $$   | $$  | $$   | $$   | $$  | $$| $$__| $$  | $$  | $$__| $$| $$      
+   | $$   | $$  | $$   | $$   | $$  | $$| $$    $$  | $$  | $$    $$| $$      
+   | $$   | $$  | $$   | $$   | $$  | $$| $$$$$$$\  | $$  | $$$$$$$$| $$      
+   | $$   | $$__/ $$   | $$   | $$__/ $$| $$  | $$ _| $$_ | $$  | $$| $$_____ 
+   | $$    \$$    $$   | $$    \$$    $$| $$  | $$|   $$ \| $$  | $$| $$     \
+    \$$     \$$$$$$     \$$     \$$$$$$  \$$   \$$ \$$$$$$ \$$   \$$ \$$$$$$$$
+                                                                              
+It should be fairly simple as it ressembles the usual style of most modern apps that contain a feed.
+
+1. The user sees a login page. If the user has an account he logs in. Else:
+2. The user proceeds to register in the application.(Due to the fact that is does some sort of gambling, it does not make a lot of sense to get a lot of info 
+													from the database.)
+3. Once he registers a brand new Ethereum wallet will be created by the server.
+3. After registration, The user will need to wait for 30s and he will receive 2 Ethereums.(Debugging feature, which is implemented for the sake of the example, in practice they will send their own ether to this address.)
+4. The user will see a feed with the available lotteries that he can join in.
+5. The user can also press the pink button to start his own lottery in which he will be able to set parameters such as numbers of players and minimum bets.
+6. The user can access his/her profile and see his/her available Ether.
+7. If the user wins he will see an increase in his/her wallet.
+8. The user can withdraw his funds.
+------------------------------------------------------------------------------------------------------------------
+
+  ______    ______   __    __   ______  ________  _______    ______   ______  __    __  ________   ______  
+ /      \  /      \ |  \  |  \ /      \|        \|       \  /      \ |      \|  \  |  \|        \ /      \ 
+|  $$$$$$\|  $$$$$$\| $$\ | $$|  $$$$$$\\$$$$$$$$| $$$$$$$\|  $$$$$$\ \$$$$$$| $$\ | $$ \$$$$$$$$|  $$$$$$\
+| $$   \$$| $$  | $$| $$$\| $$| $$___\$$  | $$   | $$__| $$| $$__| $$  | $$  | $$$\| $$   | $$   | $$___\$$
+| $$      | $$  | $$| $$$$\ $$ \$$    \   | $$   | $$    $$| $$    $$  | $$  | $$$$\ $$   | $$    \$$    \ 
+| $$   __ | $$  | $$| $$\$$ $$ _\$$$$$$\  | $$   | $$$$$$$\| $$$$$$$$  | $$  | $$\$$ $$   | $$    _\$$$$$$\
+| $$__/  \| $$__/ $$| $$ \$$$$|  \__| $$  | $$   | $$  | $$| $$  | $$ _| $$_ | $$ \$$$$   | $$   |  \__| $$
+ \$$    $$ \$$    $$| $$  \$$$ \$$    $$  | $$   | $$  | $$| $$  | $$|   $$ \| $$  \$$$   | $$    \$$    $$
+  \$$$$$$   \$$$$$$  \$$   \$$  \$$$$$$    \$$    \$$   \$$ \$$   \$$ \$$$$$$ \$$   \$$    \$$     \$$$$$$ 
+                                                                                                           
+1. Do to the peer-to-peer cryptographic nature of the frameworks used we are constrained to the time it takes to be approved by the blockchain in
+this case the one for the Ethereum Rinkeby network. This makes events such as receiving the initial Ether to play,create a lottery,join a lottery and the
+the withdrawal of funds tak an approximate time of 37 seconds. We have narrowed that time to 32 seconds. Which represents an ideal efficiency of at least percent in comparisson to the response of the network of 30 seconds.
+2. We are also constrained by the usage of the server, as the maxiumum capcaity for concurrent operator for Python's Flask occurs at 10 transactions at the same server. The server is also running Geth, which is a very heavy load on the system.                     
+----------------------------------------------------------------------------------------------------------------                                                      
+
+
+
+
